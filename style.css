@@ -27,9 +27,40 @@ body{
     height: 100vh;
     background-position: center;
     background-size: cover;
-    
+    display: flex;
+    align-items: center;
 }
 
 .container{
-    
+   max-width: 300px;
+   margin: 0 20px auto; 
+   padding: 0 2opx;
+   width: 100%;
+   height: 100px;
+}
+
+.weather-man{
+    background-color: azure;
+   padding: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: 320px;
+   height:50vh;
+}
+
+.header{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+}
+
+.location{
+    padding: 1rem;
+    display: flex;
+}
+
+.location span{
+    margin: 0 auto;
+    font-size: 25px ;
 }
