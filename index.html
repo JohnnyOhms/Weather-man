@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2dfc8161ff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Concert One" >
     <title>Weather man</title>
 </head>
 <body>
     <div class="container">
         <div class="weather-man">
             <div class="header">
-                <i class="fa-solid fa-location-dot" id="head"><span id="country">NIG</span></i>
-                <p id="name">Weatherman</p>
-                <i class="fa-solid fa-magnifying-glass" id="head"></i>
+                <i class="fa-solid fa-location-dot hide" id="head"><span id="country" class="country hide">NIG</span></i>
+                <form action=""id="input">
+                    <input type="text" name="text" id="text" class="search">
+                    <input type="button" class="btn" value="search">
+                </form>
+                <p id="name" class="name hide">Weatherman</p>
+                <i class="fa-solid fa-magnifying-glass hide" id="head"></i>
             </div>
             <p class="location"><span>Lagos</span></p><br>
             <p class="date"><span>Sunday, June 12 2022</span></p><br>

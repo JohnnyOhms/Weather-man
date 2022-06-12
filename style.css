@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100&display=swap');
 
 :root {
     --white:#fff;
@@ -9,6 +8,7 @@
     --color-sec: #db6400;
     --color-grey: #ddd;
     --color-dark-grey: #222831;
+    --color-azure: azure;
 }
 
 * {
@@ -22,7 +22,7 @@ html {
 }
 
 body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Concert One', serif;
     background-image: url(./image/ivana-cajina-HDd-NQ_AMNQ-unsplash.jpg);
     height: 100vh;
     background-position: center;
@@ -30,25 +30,53 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .container{
-   max-width: 300px;
-   margin: 2px auto; 
-   /* margin-top: 2px; */
+   max-width: 900px;
+   margin: 0 auto; 
    padding: 0 20px;
    width: 100rem;  
 }
 
 .weather-man{
-    background-color: azure;
-   padding: 0.5rem;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   max-width: 320px;
-   height:85vh;
-   border-radius:12px ;
+    background-color: var(--black);
+    opacity: 0.7;
+    color: var(--white);
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    height:98vh;
+    border-radius:12px;
+}
+
+#input{
+    margin: 0 auto;
+    display: flex;
+    padding-top: 1.8rem;
+}
+
+.search{
+    padding: 0.7rem;
+    border: none;
+    outline: none;
+    background-color: var(--color-azure);
+    border-radius: 5px;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    background: var(--light-blue);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 2px;
+    cursor: pointer;
 }
 
 .header{
@@ -59,7 +87,8 @@ body{
 
 #name{
     font-size: 13px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-right: 40px;
 }
 
 #head{
@@ -79,7 +108,6 @@ body{
 .location span{
     margin: 0 auto;
     font-size: 30px ;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100;
     padding-bottom: 2rem;
 }
@@ -90,8 +118,7 @@ body{
 }
 .date span{
     margin: 0 auto;
-    font-size: 15px;
-    font-family: sans-serif;
+    font-size: 15px; 
     font-weight: 500;
 }
 
@@ -103,8 +130,10 @@ body{
 .temp span{
     margin: 0 auto;
     font-size: 60px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Orbitron";
+    font-weight: bolder;
     border-bottom: 2px dashed var(--black);
+    border-color: var(--white);
     padding-bottom: 2rem;
 }
 
@@ -112,13 +141,17 @@ body{
     margin: 0 auto;
     padding: 1rem;
     font-size: 18px;
-    font-family: sans-serif;
 }
 
 #rotate{
     margin: 0 auto;
     padding: 5rem 5rem 2rem 5rem;
     font-size: 27px;
+    transition: all ease .8s;
+}
+
+#rotate:hover{
+    font-size: 33px;
 }
 
 .base{
@@ -127,16 +160,19 @@ body{
 }
 
 #base{
-    padding: 2rem;
-    font-size: 17px;
+    padding: 3rem;
+    font-size: 18px;
 }
 
 #base > p{
-    font-size: 12px;
+    font-size: 13px;
+    padding-top: 1rem;
 }
 
-@media only screen and (max-width: 600px){
-    .weather-man{
-        height: 70vh;
-    }
+.hide{
+    display: none;
+}
+
+@media only screen and (max-width: 400px){
+
 }
