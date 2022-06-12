@@ -54,6 +54,10 @@ body{
     border-radius:12px;
 }
 
+i{
+    font-size: 20px;
+}
+
 #input{
     margin: 0 auto;
     display: flex;
@@ -66,6 +70,26 @@ body{
     outline: none;
     background-color: var(--color-azure);
     border-radius: 5px;
+    animation: slide-down ease .8s;
+}
+
+/* will add a slide-down class */
+/* will add a slide-from-left class */
+
+@keyframes slide-down{
+    from{
+        transform: translateY(-30rem);
+    }to{
+        transform:translateY(0rem)
+    }
+}
+
+@keyframes slide-from-left {
+    from{
+        transform: translateX(-22rem);
+    }to{
+        transform:translateX(0)
+    }
 }
 
 .btn{
@@ -77,6 +101,7 @@ body{
     padding: 1rem;
     margin: 2px;
     cursor: pointer;
+    animation: slide-from-left ease .8s;
 }
 
 .header{
