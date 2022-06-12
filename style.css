@@ -28,15 +28,16 @@ body{
     background-position: center;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .container{
    max-width: 300px;
-   margin: 0 auto; 
-   margin-top: 2px;
-   padding: 0 2opx;
-   width: 100rem;
+   margin: 2px auto; 
+   /* margin-top: 2px; */
+   padding: 0 20px;
+   width: 100rem;  
 }
 
 .weather-man{
@@ -46,7 +47,7 @@ body{
    flex-direction: column;
    width: 100%;
    max-width: 320px;
-   height:90vh;
+   height:85vh;
    border-radius:12px ;
 }
 
@@ -56,8 +57,18 @@ body{
     justify-content: space-between;
 }
 
+#name{
+    font-size: 13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
 #head{
     font-size: 15px;
+}
+
+#country{
+    font-size: 12px;
+    padding: 0 0 0 0.4rem;
 }
 
 .location{
@@ -106,6 +117,26 @@ body{
 
 #rotate{
     margin: 0 auto;
-    padding: 5rem 5rem 3rem 5rem;
+    padding: 5rem 5rem 2rem 5rem;
     font-size: 27px;
+}
+
+.base{
+    display: flex;
+    justify-content: space-between;
+}
+
+#base{
+    padding: 2rem;
+    font-size: 17px;
+}
+
+#base > p{
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 600px){
+    .weather-man{
+        height: 70vh;
+    }
 }
