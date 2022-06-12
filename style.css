@@ -70,11 +70,15 @@ i{
     outline: none;
     background-color: var(--color-azure);
     border-radius: 5px;
+}
+
+.slide-down{
     animation: slide-down ease .8s;
 }
 
-/* will add a slide-down class */
-/* will add a slide-from-left class */
+.slide-from-left{
+    animation: slide-from-left ease .8s;
+}
 
 @keyframes slide-down{
     from{
@@ -101,7 +105,6 @@ i{
     padding: 1rem;
     margin: 2px;
     cursor: pointer;
-    animation: slide-from-left ease .8s;
 }
 
 .header{
@@ -112,8 +115,9 @@ i{
 
 #name{
     font-size: 13px;
+    font-family:'orbitron' ;
     text-align: center;
-    padding-right: 40px;
+    padding-right: 80px;
 }
 
 #head{
