@@ -33,10 +33,10 @@ body{
 
 .container{
    max-width: 300px;
-   margin: 0 20px auto; 
+   margin: 0 auto; 
+   margin-top: 2px;
    padding: 0 2opx;
-   width: 100%;
-   height: 100px;
+   width: 100rem;
 }
 
 .weather-man{
@@ -46,21 +46,66 @@ body{
    flex-direction: column;
    width: 100%;
    max-width: 320px;
-   height:50vh;
+   height:90vh;
+   border-radius:12px ;
 }
 
 .header{
     display: flex;
-    padding: 1rem;
-    justify-content: space-around;
+    padding: 1.5rem 1rem 4rem 1rem;
+    justify-content: space-between;
+}
+
+#head{
+    font-size: 15px;
 }
 
 .location{
-    padding: 1rem;
+    padding: 1rem 2rem 0 1rem;
     display: flex;
 }
 
 .location span{
     margin: 0 auto;
-    font-size: 25px ;
+    font-size: 30px ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    padding-bottom: 2rem;
+}
+
+.date{
+    padding: 0 1rem 0 1rem;
+    display: flex;
+}
+.date span{
+    margin: 0 auto;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.temp{
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+}
+
+.temp span{
+    margin: 0 auto;
+    font-size: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 2px dashed var(--black);
+    padding-bottom: 2rem;
+}
+
+.weather, .temp-range{
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+#rotate{
+    margin: 0 auto;
+    padding: 5rem 5rem 3rem 5rem;
+    font-size: 27px;
 }
