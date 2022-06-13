@@ -120,8 +120,12 @@ i{
     padding-right: 80px;
 }
 
-#head{
+.head{
     font-size: 15px;
+}
+
+.head:active{
+    color: var(--color-sec);
 }
 
 #country{
@@ -177,10 +181,7 @@ i{
     padding: 5rem 5rem 2rem 5rem;
     font-size: 27px;
     transition: all ease .8s;
-}
-
-#rotate:hover{
-    font-size: 33px;
+    color: rgb(14, 145, 14)
 }
 
 .base{
