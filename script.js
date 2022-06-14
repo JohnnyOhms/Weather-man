@@ -43,7 +43,8 @@ function displayData(data){
         return;
     }else{
         console.log(data);
-        let country = document.getElementById('country').innerHTML = "" 
+        console.log(data.sys.country);
+        let counTry = document.getElementById('country').innerHTML = "data.sys.country";
     }
         
     }
