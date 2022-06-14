@@ -61,7 +61,7 @@ i{
 #input{
     margin: 0 auto;
     display: flex;
-    padding-top: 1.8rem;
+    padding-left: 0.5rem;
 }
 
 .search{
