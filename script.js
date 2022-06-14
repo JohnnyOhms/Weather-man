@@ -38,7 +38,12 @@ function getData(e){
 function displayData(data){
     if(data.cod ==  "404"){ 
         console.log(data.message);
+        alert(data.message)
+        // input.value="";
         return;
+    }else{
+        console.log(data);
+        let country = document.getElementById('country').innerHTML = "" 
     }
-    console.log(data);   
-}
+        
+    }
