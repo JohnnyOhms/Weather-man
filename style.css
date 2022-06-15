@@ -126,7 +126,7 @@ i{
 
 #name{
     font-size: 13px;
-    font-family:'orbitron' ;
+    font-family:'orbitron';
     text-align: center;
     padding-right: 80px;
 }
@@ -170,10 +170,17 @@ i{
     padding-bottom: 2rem;
 }
 
+.icon{
+    font-family: 'Concert One';
+    align-items: center;
+}
+
 .weather, .temp-range{
     margin: 0 auto;
     padding: 1rem;
     font-size: 18px;
+    display: flex;
+    /* flex-direction: column; */
 }
 
 #rotate{

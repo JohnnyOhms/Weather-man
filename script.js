@@ -56,10 +56,15 @@ function displayData(data){
         const lat_lon = document.getElementById("lat-long")
         .innerHTML = `${parseFloat(latitude).toFixed(1)}`+"<span>&deg;C</span>/"+`${parseFloat(longitude).toFixed(1)}`+"<span>&deg;C</span>";
         const pressure = document.getElementById("pressure").innerHTML = `${data.main.pressure}hPa`;
-        //Current date
-        const currentDate = document.querySelector(".date")
+       
+        const weatherIcon = document.querySelector(".icon");
+        let icon = data.weather[0].icon;
+        let iconImage = `http://openweathermap.org/img/w/${icon}.png`;
+        icon.src = iconImage;
     }
     }
+
+     //Current date
     const currentDate = document.querySelector(".date");
     let date = new Date();
     currentDate.innerHTML = `${getDate(date)}`;
