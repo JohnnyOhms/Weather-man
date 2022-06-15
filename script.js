@@ -30,9 +30,9 @@ function getData(e){
         let fetchData = fetch(`${api.base}${input.value.toLowerCase()}${api.key}`)   
         .then(Response=> Response.json())
         .then(displayData)
-        .catch(err=>{
-         console.error('error')
-        })
+        // .catch(err=>{
+        //  console.error('error')
+        // })
     }
 }
 
@@ -60,17 +60,29 @@ function displayData(data){
         
         let icon = data.weather[0].icon;
         let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
-        let iconDisplay = document.getElementById("icon");
+        let iconDisplay = document.createElement("img");
+        iconDisplay.classList.add('.icon');
         iconDisplay.src = weatherIcon;
+        const weather = document.querySelector('.weather').appendChild(iconDisplay);
+
         
-        const main = data.weather[0].main;
+        let main = String(data.weather[0].main);
         switch (main) {
-            case clouds:
-                body.style="backgroundColor "
+            case 'Clouds':
+                console.log('clouds');
+                background();
                 break;
-        
+            case 'Clear':
+                console.log('Clear');
+                break
+            case 'Rain':
+                console.log('Rain');
+                break
+            case 'Snow':
+                console.log('Snow');
+                break
             default:
-                break;
+                return;
         }
     }
     }
@@ -86,5 +98,15 @@ function displayData(data){
                     "August","September","October","November","December"];
 
         return `${days[d.getDay()]},&nbsp${months[d.getMonth()]}&nbsp${d.getDate()}&nbsp${d.getFullYear()}`
+        
+    }
+
+    function background (b){
+        let  backgroundEffect = [
+                {
+                    clouds: b.style.backgroundColor = "Blue",
+                    opacity: b.style.opacity = "0.7"
+                },
+        ]
         
     }
