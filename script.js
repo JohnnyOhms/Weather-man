@@ -7,16 +7,17 @@ const searchBtn = document.querySelector(".head");
 const input = document.querySelector(".search");
 const btn = document.querySelector(".btn");
 const nameIcon = document.querySelector(".name");
+const body = document.querySelector(".weather-man");
 
 searchBtn.addEventListener('click', (e)=>{
     nameIcon.classList.add('hide');
     searchBtn.classList.add('hide');
-    input.classList.add('slide-down');
-    btn.classList.add('slide-from-left');
-    setTimeout(()=>{
+    // input.classList.add('slide-down');
+    // btn.classList.add('slide-from-left');
+    // setTimeout(()=>{
         input.classList.remove('hide');
         btn.classList.remove('hide');
-    }, 800)
+    // }, 800)
 })
 
 btn.addEventListener("click",getData)
@@ -56,11 +57,21 @@ function displayData(data){
         const lat_lon = document.getElementById("lat-long")
         .innerHTML = `${parseFloat(latitude).toFixed(1)}`+"<span>&deg;C</span>/"+`${parseFloat(longitude).toFixed(1)}`+"<span>&deg;C</span>";
         const pressure = document.getElementById("pressure").innerHTML = `${data.main.pressure}hPa`;
-       
-        const weatherIcon = document.querySelector(".icon");
+        
         let icon = data.weather[0].icon;
-        let iconImage = `http://openweathermap.org/img/w/${icon}.png`;
-        icon.src = iconImage;
+        let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
+        let iconDisplay = document.getElementById("icon");
+        iconDisplay.src = weatherIcon;
+        
+        const main = data.weather[0].main;
+        switch (main) {
+            case clouds:
+                body.style="backgroundColor "
+                break;
+        
+            default:
+                break;
+        }
     }
     }
 
