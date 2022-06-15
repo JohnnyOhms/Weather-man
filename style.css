@@ -55,7 +55,7 @@ body{
 }
 
 i{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #input{
@@ -135,10 +135,7 @@ i{
 
 .location{
     padding: 1rem 2rem 0 1rem;
-    display: flex;
-}
-
-.location span{
+    /* display: flex; */
     margin: 0 auto;
     font-size: 30px ;
     font-weight: 100;
@@ -157,10 +154,7 @@ i{
 
 .temp{
     padding: 0 1rem 1rem 1rem;
-    display: flex;
-}
-
-.temp span{
+    /* display: flex; */
     margin: 0 auto;
     font-size: 60px;
     font-family: "Orbitron";
@@ -192,12 +186,16 @@ i{
 #base{
     padding: 3rem;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 #base > p{
-    font-size: 13px;
+    font-size: 16px;
     padding-top: 1rem;
+    text-align: center;
 }
+
 
 .hide{
     display: none;
