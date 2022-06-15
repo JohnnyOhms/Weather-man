@@ -11,12 +11,12 @@ const nameIcon = document.querySelector(".name");
 searchBtn.addEventListener('click', (e)=>{
     nameIcon.classList.add('hide');
     searchBtn.classList.add('hide');
-    // input.classList.add('slide-down');
-    // btn.classList.add('slide-from-left');
-    // setTimeout(()=>{
+    input.classList.add('slide-down');
+    btn.classList.add('slide-from-left');
+    setTimeout(()=>{
         input.classList.remove('hide');
         btn.classList.remove('hide');
-    // }, 800)
+    }, 800)
 })
 
 btn.addEventListener("click",getData)
@@ -54,7 +54,21 @@ function displayData(data){
         let latitude = data.coord.lat;
         let longitude = data.coord.lon;
         const lat_lon = document.getElementById("lat-long")
-        .innerHTML = `${parseFloat(latitude).toFixed(1)}/${parseFloat(longitude).toFixed(1)}`;
+        .innerHTML = `${parseFloat(latitude).toFixed(1)}`+"<span>&deg;C</span>/"+`${parseFloat(longitude).toFixed(1)}`+"<span>&deg;C</span>";
+        const pressure = document.getElementById("pressure").innerHTML = `${data.main.pressure}hPa`;
+        //Current date
+        const currentDate = document.querySelector(".date")
     }
+    }
+    const currentDate = document.querySelector(".date");
+    let date = new Date();
+    currentDate.innerHTML = `${getDate(date)}`;
+
+    function getDate(d){
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let months = ["January","February","March","April","May","June","July",
+                    "August","September","October","November","December"];
+
+        return `${days[d.getDay()]},&nbsp${months[d.getMonth()]}&nbsp${d.getDate()}&nbsp${d.getFullYear()}`
         
     }

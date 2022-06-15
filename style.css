@@ -49,7 +49,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     height:98vh;
     border-radius:12px;
 }
@@ -78,6 +78,17 @@ i{
 
 .slide-from-left{
     animation: slide-from-left ease .8s;
+}
+
+.rotate-load{
+    animation: rotate 0.2s infinite ease-in;
+    animation-play-state: calc(3);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes slide-down{
@@ -121,7 +132,7 @@ i{
 }
 
 .head{
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .head:active{
@@ -135,7 +146,6 @@ i{
 
 .location{
     padding: 1rem 2rem 0 1rem;
-    /* display: flex; */
     margin: 0 auto;
     font-size: 30px ;
     font-weight: 100;
@@ -144,17 +154,13 @@ i{
 
 .date{
     padding: 0 1rem 0 1rem;
-    display: flex;
-}
-.date span{
     margin: 0 auto;
-    font-size: 15px; 
+    font-size: 18px; 
     font-weight: 500;
 }
 
 .temp{
     padding: 0 1rem 1rem 1rem;
-    /* display: flex; */
     margin: 0 auto;
     font-size: 60px;
     font-family: "Orbitron";
@@ -173,7 +179,7 @@ i{
 #rotate{
     margin: 0 auto;
     padding: 5rem 5rem 2rem 5rem;
-    font-size: 27px;
+    font-size: 30px;
     transition: all ease .8s;
     color: rgb(14, 145, 14)
 }
