@@ -30,9 +30,9 @@ function getData(e){
         let fetchData = fetch(`${api.base}${input.value.toLowerCase()}${api.key}`)   
         .then(Response=> Response.json())
         .then(displayData)
-        // .catch(err=>{
-        //  console.error('error')
-        // })
+        .catch(err=>{
+         console.error('error')
+        })
     }
 }
 
@@ -70,7 +70,7 @@ function displayData(data){
         switch (main) {
             case 'Clouds':
                 console.log('clouds');
-                background();
+                background(body[0][1]);
                 break;
             case 'Clear':
                 console.log('Clear');
@@ -103,10 +103,7 @@ function displayData(data){
 
     function background (b){
         let  backgroundEffect = [
-                {
-                    clouds: b.style.backgroundColor = "Blue",
-                    opacity: b.style.opacity = "0.7"
-                },
+            b.style.backgroundColor = 'blue',
+            b.style.opacity = '0.7'
         ]
-        
     }
