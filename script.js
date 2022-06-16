@@ -8,6 +8,19 @@ const input = document.querySelector(".search");
 const btn = document.querySelector(".btn");
 const nameIcon = document.querySelector(".name");
 const body = document.querySelector(".weather-man");
+let bodyColor = body.style.backgroundColour = "";
+
+class Background{
+    constructor(body){
+        this.body = body;
+    }
+
+    clouds(){
+        return this.body.style.backgroundColor = 'blue';
+    }
+}
+
+let backgrond = new Background(bodyColor);
 
 searchBtn.addEventListener('click', (e)=>{
     nameIcon.classList.add('hide');
@@ -70,7 +83,7 @@ function displayData(data){
         switch (main) {
             case 'Clouds':
                 console.log('clouds');
-                background(body[0][1]);
+                backgrond.clouds();
                 break;
             case 'Clear':
                 console.log('Clear');
@@ -101,9 +114,4 @@ function displayData(data){
         
     }
 
-    function background (b){
-        let  backgroundEffect = [
-            b.style.backgroundColor = 'blue',
-            b.style.opacity = '0.7'
-        ]
-    }
+    
