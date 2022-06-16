@@ -22,10 +22,22 @@ class Background{
         this.font.style.color = 'black';
     }
     clear(){
-        this.body.style.backgroundImage= "url(./image/cloud.jpg)";
+        this.body.style.backgroundImage= "url(./image/clear.jpg)";
         this.body.style.backgrondPosition = 'center';
         this.body.style.backgroundSize = 'cover';
         this.font.style.color = 'black';
+    }
+    rain(){
+        this.body.style.backgroundImage= "url(./image/rain.jpg)";
+        this.body.style.backgrondPosition = 'center';
+        this.body.style.backgroundSize = 'cover';
+        this.font.style.color = 'white';
+    }
+    snow(){
+        this.body.style.backgroundImage= "url(./image/snow.jpg)";
+        this.body.style.backgrondPosition = 'center';
+        this.body.style.backgroundSize = 'cover';
+        this.font.style.color = 'white';
     }
 }
 
@@ -92,13 +104,15 @@ function displayData(data){
         switch (main) {
             case 'Clouds':
                 console.log('clouds');
-                backgrond.clouds();
+                backgrond.clouds()
                 break;
             case 'Clear':
                 console.log('Clear');
+                backgrond.clear()
                 break
             case 'Rain':
                 console.log('Rain');
+                backgrond.rain()
                 break
             case 'Snow':
                 console.log('Snow');
