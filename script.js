@@ -8,19 +8,28 @@ const input = document.querySelector(".search");
 const btn = document.querySelector(".btn");
 const nameIcon = document.querySelector(".name");
 const body = document.querySelector(".weather-man");
-let bodyColor = body.style.backgroundColour = "";
 
 class Background{
-    constructor(body){
-        this.body = body;
+    constructor(color){
+        this.body = color;
+        this.font = color;
     }
 
     clouds(){
-        return this.body.style.backgroundColor = 'blue';
+        this.body.style.backgroundImage= "url(./image/cloud.jpg)";
+        this.body.style.backgrondPosition = 'center';
+        this.body.style.backgroundSize = 'cover';
+        this.font.style.color = 'black';
+    }
+    clear(){
+        this.body.style.backgroundImage= "url(./image/cloud.jpg)";
+        this.body.style.backgrondPosition = 'center';
+        this.body.style.backgroundSize = 'cover';
+        this.font.style.color = 'black';
     }
 }
 
-let backgrond = new Background(bodyColor);
+let backgrond = new Background(body);
 
 searchBtn.addEventListener('click', (e)=>{
     nameIcon.classList.add('hide');
