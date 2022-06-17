@@ -72,6 +72,14 @@ i{
     border-radius: 5px;
 }
 
+.icon{
+    background-color: rgba(58, 32, 32, 0.801);
+    align-items: center;
+    /* opacity: ; */
+    border-radius: 50%;
+
+}
+
 .slide-down{
     animation: slide-down ease .8s;
 }

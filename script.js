@@ -8,6 +8,7 @@ const input = document.querySelector(".search");
 const btn = document.querySelector(".btn");
 const nameIcon = document.querySelector(".name");
 const body = document.querySelector(".weather-man");
+const weather = document.querySelector('.weather')
 
 class Background{
     constructor(color){
@@ -16,28 +17,29 @@ class Background{
     }
 
     clouds(){
-        this.body.style.backgroundImage= "url(./image/cloud.jpg)";
-        this.body.style.backgrondPosition = 'center';
-        this.body.style.backgroundSize = 'cover';
-        this.font.style.color = 'black';
+        this.body.style.backgroundImage= "url(./image/cloud.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.font.style.color = 'black'
     }
     clear(){
-        this.body.style.backgroundImage= "url(./image/clear.jpg)";
-        this.body.style.backgrondPosition = 'center';
-        this.body.style.backgroundSize = 'cover';
-        this.font.style.color = 'black';
+        this.body.style.backgroundImage= "url(./image/clear.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.body.style.opacity = '0.6'
+        this.font.style.color = 'black'
     }
     rain(){
-        this.body.style.backgroundImage= "url(./image/rain.jpg)";
-        this.body.style.backgrondPosition = 'center';
-        this.body.style.backgroundSize = 'cover';
-        this.font.style.color = 'white';
+        this.body.style.backgroundImage= "url(./image/rain.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.font.style.color = 'white'
     }
     snow(){
-        this.body.style.backgroundImage= "url(./image/snow.jpg)";
-        this.body.style.backgrondPosition = 'center';
-        this.body.style.backgroundSize = 'cover';
-        this.font.style.color = 'white';
+        this.body.style.backgroundImage= "url(./image/snow.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.font.style.color = 'white'
     }
 }
 
@@ -78,6 +80,10 @@ function displayData(data){
         return;
     }else{
         console.log(data);
+        while(weather.hasChildNodes()){
+            weather.removeChild(weather.firstChild)
+        }
+
         const counTry = document.getElementById('country').innerHTML = `${data.sys.country}`;
         const city = document.getElementById('location').innerHTML= `${data.name}`;
         const temperature = document.querySelector('.temp').innerHTML= Math.floor(`${data.main.temp}`)+"<span>&deg;C</span>";
@@ -95,11 +101,10 @@ function displayData(data){
         let icon = data.weather[0].icon;
         let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
         let iconDisplay = document.createElement("img");
-        iconDisplay.classList.add('.icon');
+        iconDisplay.classList.add('icon');
         iconDisplay.src = weatherIcon;
-        const weather = document.querySelector('.weather').appendChild(iconDisplay);
-
-        
+        weather.appendChild(iconDisplay);
+       
         let main = String(data.weather[0].main);
         switch (main) {
             case 'Clouds':
