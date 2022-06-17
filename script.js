@@ -66,9 +66,9 @@ function getData(e){
         let fetchData = fetch(`${api.base}${input.value.toLowerCase()}${api.key}`)   
         .then(Response=> Response.json())
         .then(displayData)
-        .catch(err=>{
-         console.error('error')
-        })
+        // .catch(err=>{
+        //  console.error('error')
+        // })
     }
 }
 
@@ -83,7 +83,6 @@ function displayData(data){
         while(weather.hasChildNodes()){
             weather.removeChild(weather.firstChild)
         }
-
         const counTry = document.getElementById('country').innerHTML = `${data.sys.country}`;
         const city = document.getElementById('location').innerHTML= `${data.name}`;
         const temperature = document.querySelector('.temp').innerHTML= Math.floor(`${data.main.temp}`)+"<span>&deg;C</span>";
@@ -97,7 +96,7 @@ function displayData(data){
         const lat_lon = document.getElementById("lat-long")
         .innerHTML = `${parseFloat(latitude).toFixed(1)}`+"<span>&deg;C</span>/"+`${parseFloat(longitude).toFixed(1)}`+"<span>&deg;C</span>";
         const pressure = document.getElementById("pressure").innerHTML = `${data.main.pressure}hPa`;
-        
+        const condition = document.querySelector('.condition').innerHTML = `${data.weather[0].description}`
         let icon = data.weather[0].icon;
         let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
         let iconDisplay = document.createElement("img");
