@@ -23,7 +23,7 @@ html {
 
 body{
     font-family: 'Concert One', serif;
-    background-image: url(./image/background.jpg);
+    background: url(background.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;
