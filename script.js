@@ -42,13 +42,13 @@ class Background{
         this.font.style.color = 'white'
     }
     thunder(){
-        this.body.style.backgroundImage= "url(./image/snow.jpg)"
+        this.body.style.backgroundImage= "url(./image/thunder.jpg)"
         this.body.style.backgrondPosition = 'center'
         this.body.style.backgroundSize = 'cover'
         this.font.style.color = 'white'
     }
     others(){
-        this.body.style.backgroundImage= "url(./image/snow.jpg)"
+        this.body.style.backgroundImage= "url(./image/others.jpg)"
         this.body.style.backgrondPosition = 'center'
         this.body.style.backgroundSize = 'cover'
         this.font.style.color = 'white'
@@ -60,12 +60,15 @@ let backgrond = new Background(body);
 searchBtn.addEventListener('click', (e)=>{
     nameIcon.classList.add('hide');
     searchBtn.classList.add('hide');
-    // input.classList.add('slide-down');
-    // btn.classList.add('slide-from-left');
-    // setTimeout(()=>{
+    input.classList.add('slide-down');
+    btn.classList.add('slide-from-left');
+    
+    setTimeout(()=>{
         input.classList.remove('hide');
         btn.classList.remove('hide');
-    // }, 800)
+
+    }, 800)
+    
 })
 
 btn.addEventListener("click",getData)
@@ -87,16 +90,22 @@ function getData(e){
              console.error('error')
             })
             rotate.classList.remove('rotate-load')
-        }, 2000)
+        }, 1500)
         }
-   
 }
+
+rotate.addEventListener('click', (e)=>{
+    rotate.classList.add('rotate-load');
+    setTimeout(()=>{
+        window.location.assign('index.html')
+    }, 1000)
+})
 
 function displayData(data){
     if(data.cod ==  "404"){ 
         console.log(data.message);
         alert(data.message)
-        // input.value="";
+        input.value="";
         return;
     }else{
         console.log(data);
@@ -123,6 +132,26 @@ function displayData(data){
         iconDisplay.classList.add('icon');
         iconDisplay.src = weatherIcon;
         weather.appendChild(iconDisplay);
+        input.value="";
+  
+        //remove search bar
+        input.classList.remove('slide-down');
+        btn.classList.remove('slide-from-left');
+
+        input.classList.add('slide-up');
+        btn.classList.add('slide-up'); 
+      
+        setTimeout(()=>{
+            nameIcon.classList.remove('hide');
+            searchBtn.classList.remove('hide');
+
+            input.classList.add('hide');
+            btn.classList.add('hide');
+ 
+        },1000)
+
+        input.classList.remove('slide-up');
+        btn.classList.remove('slide-up'); 
 
         switch(icon){
             case '50d':
@@ -156,7 +185,7 @@ function displayData(data){
                 return;
         }
     }
-    }
+}
 
      //Current date
     const currentDate = document.querySelector(".date");

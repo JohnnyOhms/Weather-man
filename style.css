@@ -93,6 +93,10 @@ i{
     animation-play-state: calc(3);
 }
 
+.slide-up{
+    animation: slide-up ease .8s;
+}
+
 @keyframes rotate {
     from{
         transform: rotate(0deg);
@@ -114,6 +118,14 @@ i{
         transform: translateX(-22rem);
     }to{
         transform:translateX(0)
+    }
+}
+
+@keyframes slide-up{
+    0%{
+        transform: translateY(0);
+    }100%{
+        transform: translateY(-90rem);
     }
 }
 
