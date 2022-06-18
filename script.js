@@ -41,6 +41,18 @@ class Background{
         this.body.style.backgroundSize = 'cover'
         this.font.style.color = 'white'
     }
+    thunder(){
+        this.body.style.backgroundImage= "url(./image/snow.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.font.style.color = 'white'
+    }
+    others(){
+        this.body.style.backgroundImage= "url(./image/snow.jpg)"
+        this.body.style.backgrondPosition = 'center'
+        this.body.style.backgroundSize = 'cover'
+        this.font.style.color = 'white'
+    }
 }
 
 let backgrond = new Background(body);
@@ -57,19 +69,27 @@ searchBtn.addEventListener('click', (e)=>{
 })
 
 btn.addEventListener("click",getData)
+let rotate = document.getElementById('rotate');
+
 
 function getData(e){
     e.preventDefault();
-    if(input.value == ""){
-        return;
-    }else{
-        let fetchData = fetch(`${api.base}${input.value.toLowerCase()}${api.key}`)   
-        .then(Response=> Response.json())
-        .then(displayData)
-        // .catch(err=>{
-        //  console.error('error')
-        // })
-    }
+    rotate.classList.add('rotate-load')
+        if(input.value == ""){
+            rotate.classList.remove('rotate-load')
+            return;
+        }else{
+            setTimeout(()=>{
+            let fetchData = fetch(`${api.base}${input.value.toLowerCase()}${api.key}`)   
+            .then(Response=> Response.json())
+            .then(displayData)
+            .catch(err=>{
+             console.error('error')
+            })
+            rotate.classList.remove('rotate-load')
+        }, 2000)
+        }
+   
 }
 
 function displayData(data){
@@ -97,12 +117,22 @@ function displayData(data){
         .innerHTML = `${parseFloat(latitude).toFixed(1)}`+"<span>&deg;C</span>/"+`${parseFloat(longitude).toFixed(1)}`+"<span>&deg;C</span>";
         const pressure = document.getElementById("pressure").innerHTML = `${data.main.pressure}hPa`;
         const condition = document.querySelector('.condition').innerHTML = `${data.weather[0].description}`
-        let icon = data.weather[0].icon;
+        let icon = String(data.weather[0].icon);
         let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
         let iconDisplay = document.createElement("img");
         iconDisplay.classList.add('icon');
         iconDisplay.src = weatherIcon;
         weather.appendChild(iconDisplay);
+
+        switch(icon){
+            case '50d':
+                break;
+            case '09d':
+                break;
+            default :
+            console.log('switched to main');
+                break;
+        }
        
         let main = String(data.weather[0].main);
         switch (main) {
@@ -122,6 +152,7 @@ function displayData(data){
                 console.log('Snow');
                 break
             default:
+                console.log('switched to icon');
                 return;
         }
     }

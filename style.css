@@ -89,13 +89,15 @@ i{
 }
 
 .rotate-load{
-    animation: rotate 1s infinite ease-in;
+    animation: rotate 0.5s infinite linear;
     animation-play-state: calc(3);
 }
 
 @keyframes rotate {
-    0%{
-        transform: rotate(360deg);
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(359deg);
     }
 }
 
@@ -196,7 +198,7 @@ i{
 
 #rotate{
     margin: 0 auto;
-    padding: 5rem 5rem 2rem 5rem;
+    padding: 3rem;
     font-size: 30px;
     transition: all ease .8s;
     color: rgb(14, 145, 14)
