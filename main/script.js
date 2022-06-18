@@ -39,7 +39,7 @@ class Background{
         this.body.style.backgroundImage= "url(./image/snow.jpg)"
         this.body.style.backgrondPosition = 'center'
         this.body.style.backgroundSize = 'cover'
-        this.font.style.color = 'white'
+        this.font.style.color = 'black'
     }
     thunder(){
         this.body.style.backgroundImage= "url(./image/thunder.jpg)"
@@ -155,8 +155,10 @@ function displayData(data){
 
         switch(icon){
             case '50d':
+                backgrond.others()
                 break;
             case '09d':
+                backgrond.thunder()
                 break;
             default :
             console.log('switched to main');
