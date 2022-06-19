@@ -75,7 +75,6 @@ i{
 .icon{
     background-color: rgba(58, 32, 32, 0.801);
     align-items: center;
-    /* opacity: ; */
     border-radius: 50%;
 
 }
@@ -148,6 +147,7 @@ i{
 
 #name{
     font-size: 13px;
+    font-weight: 800;
     font-family:'orbitron';
     text-align: center;
     padding-right: 80px;
