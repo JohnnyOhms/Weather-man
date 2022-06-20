@@ -74,7 +74,6 @@ searchBtn.addEventListener('click', (e)=>{
 btn.addEventListener("click",getData)
 let rotate = document.getElementById('rotate');
 
-
 function getData(e){
     e.preventDefault();
     rotate.classList.add('rotate-load')
@@ -87,7 +86,7 @@ function getData(e){
             .then(Response=> Response.json())
             .then(displayData)
             .catch(err=>{
-             console.error('error')
+                console.error('error')
             })
             rotate.classList.remove('rotate-load')
         }, 1500)
