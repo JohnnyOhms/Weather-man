@@ -245,7 +245,7 @@ i{
         align-items: center;
         justify-content: center;
     }
-    
+
     .container{
         width: 100%;
         padding: 0;
@@ -261,7 +261,7 @@ i{
     }
 
     #name{
-        padding-right: 11rem;
+        margin: 0 auto;
     }
 
     .location{
