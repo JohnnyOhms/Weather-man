@@ -50,7 +50,6 @@ body{
     flex-direction: column;
     width: 100%;
     max-width: 340px;
-    /* height; */
     border-radius:12px;
 }
 
@@ -238,18 +237,19 @@ i{
 .hide{
     display: none;
 }
-/* 
-@media only screen{
+
+@media (max-width: 600px){
     body{
         background: url(background.jpg) center center fixed no-repeat;
-        background: none;
         background-size: cover;
         align-items: center;
         justify-content: center;
+        
     }
     .container{
-        margin: 0 auto; 
-        width: 100%;  
+        /* margin: 0 auto;  */
+        width: 100%;
+        /* background-color:blue;   */
     }
     .weather-man{
         background-color: var(--black);
@@ -257,10 +257,11 @@ i{
         color: var(--white);
         /* margin: 0 auto; */
         padding: 0.5rem;
-        /* width: 100%; */
+        width: 100%;
         height:100%;
         border-radius:12px;
+
     }
 
-} */
+}
 
