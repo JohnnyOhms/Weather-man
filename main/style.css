@@ -210,7 +210,7 @@ i{
 #rotate{
     margin: 0 auto;
     padding: 3rem;
-    font-size: 30px;
+    font-size: 40px;
     transition: all ease .8s;
     color: rgb(14, 145, 14)
 }
@@ -244,28 +244,37 @@ i{
         background-size: cover;
         align-items: center;
         justify-content: center;
-        /* height: 100vh; */
-        
     }
+    
     .container{
-        /* margin: 0 auto;  */
         width: 100%;
-        /* background-color:blue;   */
         padding: 0;
         height: 100%;
-        /* display: none; */
     }
+
     .weather-man{
         background-color: var(--black);
         opacity: 0.7;
         color: var(--white);
-        /* margin: 0 auto; */
-        /* padding: 0.5rem; */
         max-width: 100%;
         height:100%;
-        border-radius:12px;
-
     }
 
+    #name{
+        padding-right: 11rem;
+    }
+
+    .location{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    #rotate{
+        padding: 7rem;
+    }
+
+    .base{
+        padding-top: 5rem;
+    }
 }
 
